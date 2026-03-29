@@ -1,0 +1,42 @@
+{
+  "name": "offer-manager-backend",
+  "version": "2.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "tsx server.js",
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio",
+    "db:generate": "drizzle-kit generate"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^0.10.4",
+    "bcrypt": "^5.1.1",
+    "cloudinary": "^1.41.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "date-fns": "^2.30.0",
+    "date-fns-tz": "^2.0.1",
+    "dotenv": "^16.6.1",
+    "drizzle-orm": "^0.38.4",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.4.0",
+    "helmet": "^7.2.0",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1",
+    "multer-storage-cloudinary": "^4.0.0",
+    "node-cron": "^4.2.1",
+    "nodemailer": "^6.10.1",
+    "pg": "^8.20.0",
+    "resend": "^6.9.4",
+    "socket.io": "^4.8.1",
+    "web-push": "^3.6.7",
+    "winston": "^3.14.0",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "drizzle-kit": "^0.30.0",
+    "nodemon": "^3.1.0",
+    "tsx": "^4.19.0"
+  }
+}

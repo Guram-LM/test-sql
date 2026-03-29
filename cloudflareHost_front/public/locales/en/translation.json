@@ -1,0 +1,612 @@
+{
+  "Header-Nav": {
+    "main": "HOME",
+    "about": "ABOUT",
+    "coaching": "HYBRID",
+    "for-companies": "FOR COMPANIES",
+    "courses": "COURSES & TRAININGS",
+    "results": "RESULTS",
+    "contact": "CONTACT",
+    "title": "MENU"
+  },
+
+  "footerLinks": {
+    "home": "HOME",
+    "coaching": "COACHING",
+    "results": "RESULTS"
+  },
+
+  "footerLinksRight": {
+    "termsOfService": "TERMS OF SERVICE",
+    "privacy": "PRIVACY",
+    "termsOfUse": "TERMS OF USE"
+  },
+
+  "contactInfo": {
+    "email": {
+      "title": "Email",
+      "value": "hello@nutsabakhtadze.com"
+    },
+    "phone": {
+      "title": "Phone",
+      "value": "+995 555 565 464"
+    },
+    "address": {
+      "title": "Address",
+      "value": "Tbilisi/Georgia"
+    }
+  },
+
+  "connectWithCommunity": {
+    "title": "Connect With Our Community",
+    "description": "Our community is united by one goal - emotional development, awareness and inner balance. We are here to connect with people who are ready to better understand their emotions, develop emotional intelligence and create a more peaceful, stable life. Share your experiences, the knowledge and vision you have discovered along the way - your voice and your story are important to us.",
+    "ctadescription": "Share your experience, question, or opinion — our space brings together people striving for emotional growth and inner balance. We are always ready to listen and assist you.",
+    "cta": "Contact us now"
+  },
+
+  "contactFormShort": {
+    "sendUsMessage": "Send Us a Message",
+    "name": "Your Name",
+    "email": "Your Email",
+    "message": "Your Message",
+    "submit": "Send Message",
+    "submitMessage": "Thank you! Your message has been sent!"
+  },
+
+  "contactFormFull": {
+    "title": "Send Us a Message",
+    "nameLabel": "Name",
+    "namePlaceholder": "Your Name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "your@email.com",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Your Message...",
+    "submitButton": "Send Message",
+    "submitMessage": "Your message has been sent successfully!"
+  },
+
+  "AboutPage": {
+    "headerName": "Nutsa Bakhtadze",
+    "sectotTitle": "Emotional Intelligence Coach",
+    "sectotSubTitle": "Your Guide to Emotional Transformation",
+    "iconText1": "Leader",
+    "iconText2": "Practitioner",
+    "iconText3": "Empathy",
+   "headerSubtitlePart1": "Certified Emotional Intelligence Mentor |  ",
+    "sixSeconds": "\n'Six Seconds'\n",
+    "headerSubtitlepart2": "Georgia Representative",
+    "introQuote": "Your emotions are your friends - they will show you when you are losing touch with yourself and when you are starting to regain it.",
+    "missionBox": "Emotional intelligence is not a theory – it’s a skill that can transform your life.",
+    "credentialsTitle": "Professional experience",
+    "credentialsText": "I am the first and currently the only Emotional Intelligence Mentor in Georgia, representing the 'Six Seconds' international network. I have academic education and certificates in emotional intelligence, neuroscience, and coaching.",
+    "storyTitle": "My Journey",
+    "storyText1": "I know what it's like to feel like you're falling apart from the inside - when everything seems fine on the outside, but inside you have no strength left. For years, I've been trying to free myself from stress and inner turmoil.",
+    "storyText2": "Until I finally discovered that emotions are not a weakness. They are our greatest source of energy.",
+    "certificatesTitle": "My Certificates",
+    "certificatesDescription": "Each certificate is a step that made me a better mentor and gave me the knowledge to share the power of emotional intelligence with others.",
+    "servicesTitle": "How I Can Help You",
+    "service1Title": "Understand Your Emotions",
+    "service1Text": "Understand the true reasons for your beliefs and create a conscious relationship with yourself.",
+    "service2Title": "Develop Conscious Habits",
+    "service2Text": "Create new skills.",
+    "service3Title": "Elevate Life Quality",
+    "service3Text": "Find emotional balance and deepen relationships with others.",
+    "finalMission": "Today, I work with people who are ready to bring awareness, emotional intelligence, and inner peace into their lives. My mission is to help you discover yourself, synchronize your mind and emotions, and find a path where you no longer need to struggle - just be, grow, and live with love.",
+    "ctaTitle": "Let’s Find Your Balance Together",
+    "ctaSubtitle": "Start Your EQ Journey Today",
+    "ctaButton": "Get Started Now"
+  },
+
+
+  "HomePage": {
+    "heroTitle": "Nutsa Bakhtadze — Emotional Intelligence (EQ) Coach",
+    "heroText": "Make friends with your emotions and start living a more peaceful life. Here you will learn how to recognize stress, fatigue, and fear, how to see opportunities where you previously saw difficulties.",
+    "heroButton": "Starts today →",
+
+    "mediaSectionTitle": "YOU MAY HAVE SEEN ME IN:",
+
+    "aboutTitle": "Nutsa Bakhtadze - Your Guide to Emotional Transformation",
+
+   "aboutText1": "I am Nutsa Bakhtadze, a certified EQ coach at the Global Emotional Intelligence Institute at Six Seconds ",
+ "aboutTextsixsecoundlink": "(www.6seconds.org) ",
+ "aboutTextsixsecoundtext":"And their EQ leader in Georgia. I am also a certified Belief Clearing Practitioner with the Global Sciences Foundation.",
+   
+   "aboutTextInserted": "My mission is to help you Find inner peace Develop emotional intelligence Build sincere relationships with yourself and others.",
+   "aboutText2": "I believe that emotional intelligence gives each person the power to live with more peace, purpose, and true connections. To this end, I am building an EQ culture in Georgia, for children, teens, parents, professionals, and teams.",
+    "aboutButton": "Let's Work Together",
+
+    "missionTitle": "Life is not just about surviving.",
+    "missionText": "Maybe you've been waking up for a long time just out of obligation, thinking it's normal, but deep inside you feel that something is missing.",
+    "missionTextbold": "Energy, joy, clarity, and peace.",
+    "missionTextTwo": "It's time to realize that emotions are not enemies; they are your most trustworthy guides.",
+    "missionTextTwo1": "If you know all this, you are not alone:",
+    
+    "missionList": [
+      "You often feel low on energy and don’t understand why.",
+      "Sometimes unable to control reactions and then regret it.",
+      "Feel inner emptiness or fatigue.",
+      "Difficulty making decisions because fear holds you back.",
+      "Sometimes you hear a voice telling you, I deserve more."
+    ],
+    "missionCTA": "Your emotional intelligence demands attention.",
+    "missionButton": "If you are ready",
+    "testimonials": [
+      {
+        "text": "46% of people struggle with managing their emotions and finding inner calm — this often leads to stress, exhaustion, and a persistent sense of internal tension. However, conscious work on oneself creates the opportunity to transform this experience into a stable, fulfilling, and resilient inner state.",
+        "author": "Research: Six Seconds"
+      },
+      {
+        "text": "For the first time in my life, I feel my emotions are managed and inner peace allows me to make decisions with confidence and depth.",
+        "author": "Anonymous client"
+      },
+      {
+        "text": "I transitioned from constant stress and emotional chaos to a conscious, stable, and meaningful life, where I manage emotions and feel inner calm.",
+        "author": "Anonymous client"
+      }
+    ],
+    "testimonialsMore": "Read more client reviews",
+
+    "methodsTitle": "My Approach (My Methods)",
+    "methodsSubtitle": "Emotional Intelligence • Conscious Growth • Self-Discovery",
+    "methods": [
+      "COACHING – Individual sessions to recognize and transform emotions",
+      "COURSES – Online programs and challenges for emotional intelligence development",
+      "SPEAKING – Trainings, workshops, and events for organizations"
+    ],
+"palmSectionTitle": "What does it feel like to live a life where emotions and reason work together?",
+"palmSectionText": "This is a life where you are no longer lost. " ,
+"palmSectionText1": "You don't automatically move from morning to night - only with obligations",
+"palmSectionText2": "If you feel that:",
+
+"currentState": [
+"You get lost in everyday life and don't know where you are really going. ",
+"You are often tired, empty and always missing something.",
+"You make decisions - out of fear, out of learned habits."
+],
+"message": "This means that it's time to shake things up and look at life differently. Where it is possible, your everyday life should be:",
+"possibleState": [
+"With full energy and inner peace.",
+"Where you make decisions consciously, with love.",
+"Where emotions are already your companion and guide."
+],
+"supportMessage": "I'll be with you through this process - helping your mind and emotions work as a team.",
+"palmSectionButton": "See how we can work together",
+
+    "palmStats": [
+      {
+        "text": "Studies show that people who consciously process their emotions find greater inner peace, stability, and harmony with themselves.",
+        "source": "(FastCompany)"
+      },
+      {
+        "text": "Emotionally intelligent people are more attuned to others — strengthening relationships, trust, and empathy. When you learn to express emotions consciously, your connections become filled with warmth and clarity.",
+        "source": "(CNBC)"
+      },
+      {
+        "text": "Emotional intelligence doesn’t mean perfection — it’s the ability to stay calm in the storm.  When you observe your reactions with awareness, you begin to live with freedom and compassion.",
+        "source": "(Gallup)"
+      }
+    ],
+
+    "palmReminderTitle": "Here is your reminder:",
+    "palmReminderSubtitle": "If you feel you deserve more peace, freedom, and inner strength —",
+    "palmReminderText": "This is your inner voice telling you: it's time to start changing, it's time to return to yourself, to live the way you feel you can.",
+    "palmReminderButton": "Let's Work Together",
+
+    "finalCTAText": "THE EQ TRANSFORMATION PROGRAM is a unique hybrid program that combines individual coaching, group support, and practical application of emotional intelligence in real life. You will receive everything you need to elevate your consciousness and create stable inner balance.",
+    "finalCTATitle": "You can choose a different path or change your current path.",
+    "finalCTAButton": "Let's Do It"
+  },
+
+  "slider": {
+    "title": "YOU CAN SEE ME"
+  },
+  "ResultsPage": {
+    "heroSubtitle": "Emotional Intelligence • Conscious Growth • Self-Awareness",
+    "heroTitle": "Your Emotions Are Your <span  class='text-amber-200'>\"Power,\"</span><br />Learn How to Master Them",
+
+    "heroText": "Learn to manage emotions and develop emotional intelligence. Discover how EQ helps restore inner peace and balance in life.",
+
+    "methodsSectionTitle": "What Emotional Intelligence Brings to Your Life",
+    "methodsSectionText": "EQ is not just a way of thinking — it’s a lifestyle. It helps you become aware of your emotions, act more calmly, and build healthy relationships.",
+    "methods": [
+      {
+        "title": "Awareness and Balance",
+        "description": "You learn to recognize your emotions and manage them so that stress and unexpected reactions no longer make you lose your mind."
+      },
+      {
+        "title": "How Emotional Intelligence Changes Your Life",
+        "description": "Learn how EQ helps you feel better, think better, and act better."
+      },
+      {
+        "title": "Purpose and Results",
+        "description": "You learn how to organize your thoughts and emotions so that you are more confident in yourself, know what you want, and are able to achieve it."
+      }
+    ],
+
+    "resultsSectionTitle": "Results",
+    "resultsSectionSubtitle": "What You Gain from the Course",
+   "results": [
+      "Emotions will no longer take you where you don't want to go. It often happens that a strong emotion overwhelms you and you don't know how to calm down? Do you learn how to maintain balance even when everything is in turmoil?",
+      "Here you learn how not to lose your head in difficult moments and how to regain your composure much faster.",
+      "You better understand why you are sad or angry. Both teenagers and adults often have difficulty seeing the reason. You learn how to understand what emotions are telling you.",
+      "You look at conflicts with a completely different eye. Quarrels, misunderstandings, tense conversations... We all have them. The course will show you how to sort out relationships during conflicts.",
+      "Clarity appears: what you want, who you are and what you need. It doesn't matter if you are a teenager or an adult. When emotional intelligence grows, you understand your desires better.",
+      "You no longer need to be in the shadows. You no longer hide your emotions. You learn how Express yourself calmly, naturally and confidently.",
+      "You find energy in your emotions, not fatigue. Where you used to feel tired or unmotivated, you begin to find energy, motivation and purpose."
+    ],
+"resultsQuote": "This course will teach you how to manage your emotions so that life, career, relationships, and decisions become much easier and more peaceful.",
+
+    "testimonialsSectionTitle": "Feedback",
+   
+
+    "ctaTitle": "Start Your EQ Journey",
+    "ctaText": "Your emotions are your guides. It’s time to listen to them.",
+    "ctaButton": "Get Started →",
+
+    "contactSectionTitle": "Contact Information",
+    "contactName": "Nutsa Bakhtadze — Emotional Intelligence Coach",
+    "contactEmail": "nutsa@example.com",
+    "contactPhone": "+995 555 123 456",
+    "contactAddress": "Tbilisi, Georgia"
+  },
+  
+  "privacy.title": "Privacy Policy",
+  "privacy.intro": "This privacy policy explains how your personal data is collected, used, and protected by Nutsa Bakhtadze — Certified Emotional Intelligence Coach and Six Seconds Practitioner.",
+
+  "privacy.collectTitle": "What Data We Collect",
+  "privacy.collectList": [
+    "Name and contact information (if you provide it)",
+    "Communication details and submitted messages",
+    "Cookie and analytics data (Google Analytics / Meta Pixel)"
+  ],
+
+  "privacy.usageTitle": "Why We Use This Data",
+  "privacy.usageText": "Your data is used solely for communication, service delivery, and improving user experience. We do NOT share or sell your data to third parties.",
+
+  "privacy.rightsTitle": "Your Rights (GDPR)",
+  "privacy.rightsList": [
+    "Access to your data",
+    "Edit your data",
+    "Request deletion"
+  ],
+
+
+  "terms": {
+    "title": "Terms of Service",
+    "intro": "These terms govern the delivery of coaching sessions, programs, and consultations.",
+    "bookingTitle": "Booking & Payment",
+    "bookingText": "Sessions are scheduled by prior agreement. Payment is made in advance or by individual arrangement.",
+    "cancelTitle": "Cancellation",
+    "cancelText": "Sessions can be canceled at least 24 hours in advance. Otherwise, the payment is non-refundable.",
+    "updated": "Last updated"
+  },
+  
+  "use": {
+  "title": "Terms of Use",
+  "intro": "By using this website, you agree to the following terms. If you do not agree, please stop using the website.",
+  "intellectualTitle": "Intellectual Property",
+  "intellectualText": "All materials on this website (videos, texts, visuals, content) are protected by copyright. Copying or distribution is prohibited without permission.",
+  "userTitle": "User Responsibility",
+  "userText": "Users are responsible for using the website in a lawful and proper manner.",
+  "updated": "Last updated"
+},
+"IndividualCoachingPage": {
+"hero": {
+  "subtitle": "Individual coaching, your path to emotional transformation",
+  "title": "It's time to get to know your emotions better and feel peace and direction in your life.",
+  "text": "If you feel emotionally drained, this space is created just for you.",
+  "button": "Start today →",
+  "text3": "Begin your transformation today and discover your emotional strength.",
+  "text5": "Here begins your inner journey: exploring emotional intelligence, living consciously, and experiencing slow, gentle, yet very real transformation.",
+  "text6": "Don't wait for the perfect time. Start now.",
+  "offertitle": "Your path to emotional transformation"
+},
+  "programs": {
+  "title": "Choose Your Path to Emotional Transformation",
+  "activities": "In this course you will be able to:",
+  "activities1": "In this program you will receive:",
+  "duration": "Duration:",
+  "viewDetails": "View Details"
+},
+"bottom": {
+  "title": "Nutsa Bakhtadze — Your Guide to Emotional Transformation",
+  "text": "Are you ready for your emotional journey?",
+  "start": "Start the Program",
+  "consult": "Get a Consultation"
+},
+  "loading": "Loading...",
+  "error": "Error:"
+},
+"OrderModal": {
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "phone": "Phone",
+    "message": "Optionally leave your preferred time for feedback",
+    "send": "Send",
+    "sending": "Sending...",
+    "success": "Order sent successfully!",
+    "error": "Failed to send order. Please try again.",
+    "modalTitle": "Fill out the form",
+    "validation": {
+      "firstNameMin": "First name must contain at least 2 letters",
+      "firstNameLetters": "First name must contain only letters",
+      "lastNameMin": "Last name must contain at least 2 letters",
+      "lastNameLetters": "Last name must contain only letters",
+      "email": "Please enter a valid email",
+      "phoneDigits": "Phone must contain only digits",
+      "phoneMin": "Phone length must be at least 9",
+      "phoneMax": "Phone length must not exceed 12"
+    }
+  },
+  "ErrorModal": {
+    "title": "Sorry, something went wrong",
+    "defaultMessage": "We couldn't send your order. Please try again later.",
+    "close": "Close"
+  },
+  "SuccessModal": {
+    "title": "Thank you!",
+    "message": "Your order has been successfully sent. We will contact you soon!",
+    "close": "Close"
+  },
+
+  "company": {
+  "hero": {
+    "title": "Emotional Intelligence for Organizations",
+    "subtitle": "Your team's emotional culture determines the results",
+    "description": "Today, businesses need not only strong professionals, but conscious individuals who manage emotions, relationships, and decisions — this is the new competitive advantage.",
+    "offertitle":"Emotional Intelligence: Developing Teams for Performance",
+    "price": "GEL"
+  },
+  "programs": {
+    "title": "Emotional Intelligence Programs",
+    "subtitle": "Choose the program that fits your team's needs",
+    "includes": "The program includes:",
+    "result": "Outcome:",
+    "button": "Schedule Training"
+  },
+"additionalServices": {
+"title": "Additional Services",
+"subtitle": "Customized Solutions for Your Organization's Needs",
+"items": [
+{
+"title": "Emotional Intelligence Assessment",
+"description": "A short, effective and business-oriented EQ analysis - for individuals and teams, using the SEI model, additional testing costs.",
+"buletTitle":"Who will use it:",
+"bulet1":"• HR departments",
+"bulet2":"• Managers",
+"bulet3":"• Teams who want to improve stress and communication"
+
+},
+{ 
+  "title": "Leadership Coaching", "description": "1:1 sessions for managers who want to strengthen stress management, emotional resilience and improve the quality of decisions." ,
+"buletTitle":"Who will use it:",
+"bulet4":"• Leaders and managers",
+"bulet5":"• Human Resources management professionals",
+"bulet6":"• Team leaders who often make difficult decisions"
+},
+
+{ 
+  "title": "Train the trainer", "description": "Empowering internal trainers with EQ methods, communication skills and modern group management techniques." ,
+"buletTitle":"Who will use it:",
+"bulet7":"• Internal trainers",
+"bulet8":"• HR / Learning & Development",
+"bulet9":"• Companies that want to standardize training"
+},
+{ 
+  "title": "Emotional Intelligence Diagnostics", "description": "Assessment of the emotional culture, stress levels, collaboration and communication dynamics of the organization - with a simple and effective model.",
+"buletTitle":"Who will use it:",
+"bulet10":"• Organizations that are undergoing changes",
+"bulet11":"• Teams with low motivation",
+"bulet12":"• Companies that want to improve culture" 
+}
+]
+},
+  "cta": {
+    "title": "Ready to transform your team?",
+    "text": "Contact Nutsa Bakhtadze and start developing emotional intelligence in your organization",
+    "primaryButton": "Schedule Emotional Intelligence Training",
+    "secondaryButton": "Get in Touch"
+  }
+},
+"error":{
+  "title": "Oops, something went wrong...",
+  "subtitle": "We can't reach the server at the moment",
+  "description": "Don't worry — this is just a temporary issue and we'll fix it soon. Please try refreshing the page in a few seconds.",
+  "retry": "Refresh",
+  "home": "Go to Homepage",
+  "contact": "If the problem persists, feel free to contact us:"
+},
+"contact": {
+  "successModal": {
+    "title": "Thank You!",
+    "subtitle": "Your message has been sent successfully",
+    "description": "We'll get back to you soon",
+    "button": "Got it"
+  },
+  "zodResolver": {
+    "namaSymbol": "Only letters can be entered",
+    "symbolquantity": "Must be at least 2 letters",
+    "validmail": "Please enter your email address",
+    "minSymbol": "The text must contain at least 20 characters"
+  }
+},
+  "herosection": {
+    "emotional_balance": "Emotional Balance",
+    "calm_reaction": "Calm Reaction",
+    "understanding_emotions": "Understanding Emotions",
+    "personal_growth": "Personal Growth",
+    "goal_achievement": "Goal Achievement",
+    "quality_of_life": "Quality of Life",
+    "transformation": "Transformation",
+    "inner_peace": "Inner Peace",
+    "support": "Support"
+  },
+  "copy": {
+    "copyemail": "Email copied!",
+    "copyPhone": "Phone number copied!",
+    "rejectCopy": "Copy failed"
+  },
+  "RateLimitModal": {
+    "title": "Rate Limit Exceeded",
+    "worning": "You are sending requests too often. Please try again later.",
+    "waiting": "Please wait",
+    "second": "second",
+    "button": "Close"
+  },
+  "appError": {
+    "errorTitle":"Sorry...",
+    "errorMessage": "Failed to load the application",
+    "errorDeskription": "Maybe the internet connection was lost or a new version was released",
+    "errotButtonText": "Reload"
+  },
+  "error404": {
+    "errorTitle404":"Page not found",
+    "errorMessage404": "The page you are looking for does not exist or has moved to another address.",
+    "errotButtonText404": "On the main page"
+  },
+
+  
+  "smileMoment": {
+    "title": "Pause and",
+    "action": "smile"
+  },
+
+  "desktopHeader": {
+    "title": "Interviews",
+    "subtitle": "On Emotional Intelligence"
+  },
+  
+  "videoMedia": {
+    "sectionTitle": "Video Interviews",
+    "sectionSubtitle": "Conversations on Transformation",
+    "watchVideo": "Watch Video",
+    "videos": [
+      {
+        "description": "Motor skill development plays an important role in emotional intelligence growth."
+      },
+      {
+        "description": "The impact of emotional intelligence on career and relationships."
+      },
+      {
+        "description": "The importance of brain function in shaping our emotions and habits."
+      }
+    ],
+    "power": "POWER",
+    "channel": "CHANNEL"
+  },
+  
+  "publicMedia": {
+    "sectionTitle": "Published Articles",
+    "sectionSubtitle": "Articles on Emotional Intelligence",
+    "authorLabel": "Article author:",
+    "readMore": "Read full article →",
+    "insideCover": "Inside Cover",
+    "magazines": [
+      {
+        "title": "Emotional Intelligence in Personal Development",
+        "author":"Nutsa Bakhtadze",
+        "subtitle": "“EQ Is the Foundation of Success”",
+        "excerpt": "Nutsa Bakhtadze’s course helps individuals develop emotional intelligence, effective communication, self-awareness, and career growth."
+      },
+      {
+        "title": "Emotional Intelligence and Career Choice",
+        "subtitle": "Emotional Growth",
+        "date": "Volume 1 | 28 / 10 / 2025",
+        "excerpt": "Why many young people struggle to find their path in modern education systems and how emotional intelligence supports conscious career choices and self-discovery."
+      },
+      {
+        "title": "Emotional Intelligence as a Way of Life",
+        "subtitle": "“Emotions Are Power”",
+        "excerpt": "In this article, Nutsa Bakhtadze shares her personal journey with emotional intelligence and its importance in Georgia, showing how EQ supports self-awareness."
+      }
+    ]
+  },
+  
+  "socialMedia": {
+    "sectionTitle": "Social Media",
+    "sectionSubtitle": "Follow us on social media"
+  },
+  
+  "socialMediaCards": {
+    "linkedIn": [
+      {
+    
+        "title": "Emotional Awareness",
+        "subtitle": "Certified EQ Mentor",
+        "date": "October 2025",
+        "excerpt": "Emotional intelligence teaches us awareness of choices, allows us to make decisions without fear, and discover our own goals in life.",
+        "fullLinkText": "Read more →",
+         "publition": "publition •"
+      },
+      {
+   
+        "title": "Conscious Living",
+        "subtitle": "Six Seconds in Georgia",
+        "date": "November 2026",
+        "excerpt": "The profession develops emotional habits and thinking style; awareness gives us the freedom of choice between work and life.",
+        "fullLinkText": "Read more →"
+      }
+    ]
+  },
+  
+  "facebook": {
+
+"subtitle": "Developing Emotional Intelligence in Georgia",
+"buttonText": "View"
+
+},
+  "Instagram": {
+
+"subtitle": "What would you tell yourself in 10 years?",
+"buttonText": "View"
+
+},
+"MediaButton": {
+"open": "See more",
+"close": "Close"
+},
+
+
+"feedback": {
+"title": "Feedback"
+},
+
+  "screenError": {
+    "phoneTired": "The phone is tired...",
+    "phoneWakePromise": "It will wake up soon, it promises 🫡"
+  },
+  "screenCardError": {
+    "cardSays": "Card says:",
+    "cardDoesntWantWork": "\"I don't want to work today\"",
+    "wakeHope": "It will wake up soon... hopefully 🫡"
+  },
+  "sectionCollapseButton":{
+  "close": "Close",
+  "viewReviews": "View reviews"
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
