@@ -28,6 +28,7 @@ import { startScheduler } from "./workers/scheduler.js";
 import userAuthRoutes from "./routes/user.auth.routes.js";
 import userProfileRoutes from "./routes/user.profile.routes.js";
 import { cleanupExpiredRecords } from './workers/cleanup.js';
+import adminUsersRoutes from './routes/admin.users.routes.js';
 
 
 if (!process.env.JWT_ACCESS_SECRET || !process.env.JWT_REFRESH_SECRET) {
@@ -110,6 +111,7 @@ app.use("/api/scheduled-posts", scheduledPostsRouter);
 // USER SYSTEM (IMPORTANT FIX)
 app.use("/api/auth", userAuthRoutes);
 app.use("/api/user", userProfileRoutes);
+app.use("/api/admin/users", adminUsersRoutes);
 
 // dynamic last
 app.use("/api", dynamicRoutes);

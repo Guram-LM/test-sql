@@ -10,7 +10,6 @@ import transporter from '../config/mailer.js';
 import { generateAccessToken, generateRefreshToken } from './tokens.js';
 import { emailTemplate } from './emailTemplate.js';
 import { adminAuth } from '../middleware/adminAuth.js';
-import { getFreshAdmin } from '../services/adminService.js';
 import { hashToken } from '../utils/hashToken.js';
 
 const router = express.Router();
@@ -147,14 +146,17 @@ router.post('/verify-otp', async (req, res) => {
 
     let accessToken, refreshToken;
 
+    const newTokenVersion = crypto.randomInt(1, 999999);
+
     await db.transaction(async (tx) => {
       await tx.update(admins).set({
         login_otp_hash:    null,
         login_otp_expires: null,
-        tokenVersion:      crypto.randomInt(1, 999999),
+        tokenVersion:      newTokenVersion,
       }).where(eq(admins.id, admin.id));
 
-      const freshAdmin = await getFreshAdmin(admin.id);
+      const freshAdmin = { ...admin, tokenVersion: newTokenVersion };
+
       accessToken  = generateAccessToken(freshAdmin);
       refreshToken = generateRefreshToken(freshAdmin);
 
@@ -481,6 +483,7 @@ router.post('/change-password/confirm', ...adminAuth, async (req, res) => {
     }
 
     const hashedPassword = await bcrypt.hash(newPassword, BCRYPT_ROUNDS);
+    const newTokenVersion = crypto.randomInt(1, 999999); // ← დაამატე ეს
 
     await db.transaction(async (tx) => {
       await tx.update(admins).set({
@@ -488,16 +491,17 @@ router.post('/change-password/confirm', ...adminAuth, async (req, res) => {
         reset_code:            null,
         reset_expires:         null,
         reset_verify_attempts: 0,
-        tokenVersion:          crypto.randomInt(1, 999999),
+        tokenVersion: newTokenVersion,
       }).where(eq(admins.id, admin.id));
-
+    
       await tx.update(admin_refresh_tokens)
         .set({ revoked: true })
         .where(eq(admin_refresh_tokens.admin_id, admin.id));
     });
 
     // Issue fresh tokens — admin stays logged in on current device
-    const freshAdmin      = await getFreshAdmin(admin.id);
+    const freshAdmin = { ...admin, tokenVersion: newTokenVersion };
+
     const newAccessToken  = generateAccessToken(freshAdmin);
     const newRefreshToken = generateRefreshToken(freshAdmin);
 
