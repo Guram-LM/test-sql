@@ -13,6 +13,7 @@ import Pdf from "../pdfs/pdf";
 import OnlineEvent from "../event/OnlineEvent";
 import OfflineEvent from "../event/OfflineEvent";
 import MotivationalPosts from "../motivational-posts/MotivationalPosts";
+import EventsSpace from "../user/profile-page/EventsSpace";
 
 
 export default function HomePage() {
@@ -81,6 +82,7 @@ export default function HomePage() {
       <AboutSection />
      
       <MissionVideo />
+      <EventsSpace/>
       <OnlineEvent />
       <OfflineEvent />
       

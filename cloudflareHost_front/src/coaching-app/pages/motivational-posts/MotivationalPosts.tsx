@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { useTranslation } from 'react-i18next';
 import io, { Socket } from "socket.io-client";
 
-// Socket instance
 const socket: Socket = io(
   import.meta.env.VITE_BACKEND_URL || "http://localhost:5000",
   { autoConnect: true }
@@ -15,15 +15,18 @@ interface ScheduledPost {
   content_en?: string;
   icon?: string;
   published_at: string;
-  publishUtc?: string;
 }
 
 const MotivationalPosts: React.FC = () => {
+  const { i18n } = useTranslation();
+  const lang = i18n.language || 'ka';
+
   const [posts, setPosts] = useState<ScheduledPost[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+  const [openPosts, setOpenPosts] = useState<Record<number, boolean>>({});
 
-  // Fetch initial posts
+  // Fetch posts
   const fetchPosts = async () => {
     try {
       setLoading(true);
@@ -39,7 +42,7 @@ const MotivationalPosts: React.FC = () => {
       }
     } catch (err) {
       console.error(err);
-      setError("შეტყობინებების ჩამოტვირთვა ვერ მოხერხდა");
+      setError(lang === 'ka' ? "შეტყობინებების ჩამოტვირთვა ვერ მოხერხდა" : "Failed to load messages");
     } finally {
       setLoading(false);
     }
@@ -48,7 +51,6 @@ const MotivationalPosts: React.FC = () => {
   useEffect(() => {
     fetchPosts();
 
-    // Real-time updates via Socket.IO
     socket.on("post:published", (newPost: ScheduledPost) => {
       setPosts((prev) => [newPost, ...prev]);
     });
@@ -56,151 +58,162 @@ const MotivationalPosts: React.FC = () => {
     return () => {
       socket.off("post:published");
     };
-  }, []);
+  }, [lang]);
 
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-950 via-purple-950 to-slate-900 flex items-center justify-center">
-        <div className="flex flex-col items-center gap-4">
-          <div className="w-12 h-12 border-4 border-purple-500 border-t-transparent rounded-full animate-spin" />
-          <p className="text-purple-300 text-lg">მიმდინარეობს ჩატვირთვა...</p>
-        </div>
-      </div>
-    );
-  }
+  const togglePost = (id: number) => {
+    setOpenPosts(prev => ({
+      ...prev,
+      [id]: !prev[id]
+    }));
+  };
 
-  if (error) {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-950 via-purple-950 to-slate-900 flex items-center justify-center">
-        <div className="text-center">
-          <p className="text-red-400 text-xl mb-4">{error}</p>
-          <button
-            onClick={fetchPosts}
-            className="px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-xl transition-colors"
-          >
-            თავიდან ცდა
-          </button>
-        </div>
-      </div>
-    );
-  }
+  const [featured, ...restPosts] = posts.length > 0 ? posts : [];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-purple-950 to-slate-900 py-12 px-4">
-      <div className="max-w-4xl mx-auto">
+    <div className="min-h-screen bg-[#FDFAF4] text-[#1A1410]">
+      <div className="fixed inset-0 bg-[radial-gradient(#B8860B_1px,transparent_1px)] bg-[length:32px_32px] opacity-5 pointer-events-none" />
+
+      <div className="max-w-[960px] mx-auto px-6 pt-12 pb-20">
         {/* Header */}
-        <div className="text-center mb-16">
-          <div className="flex justify-center mb-6">
-            <div className="inline-flex items-center gap-3 px-6 py-3 bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10">
-              
-              {/* Sparkles SVG */}
-              <svg className="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                <path d="M5 3l1.5 3L10 7.5 6.5 9 5 12 3.5 9 0 7.5 3.5 6 5 3zM19 3l1.5 3L24 7.5 20.5 9 19 12 17.5 9 14 7.5 17.5 6 19 3zM12 13l2 4 4 2-4 2-2 4-2-4-4-2 4-2 2-4z"/>
-              </svg>
-
-              <h1 className="text-4xl md:text-5xl font-bold text-white tracking-tighter">
-                სამოტივაციო შეტყობინებები
-              </h1>
-
-              {/* Sparkles SVG */}
-              <svg className="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                <path d="M5 3l1.5 3L10 7.5 6.5 9 5 12 3.5 9 0 7.5 3.5 6 5 3zM19 3l1.5 3L24 7.5 20.5 9 19 12 17.5 9 14 7.5 17.5 6 19 3zM12 13l2 4 4 2-4 2-2 4-2-4-4-2 4-2 2-4z"/>
-              </svg>
-            </div>
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <div>
+            <div className="text-[#B8860B] text-xs tracking-[3px] uppercase font-mono">სამოტივაციო სივრცე</div>
+            <h1 className="text-4xl font-serif italic mt-2">შეტყობინებები</h1>
+            <p className="text-[#6B5E52] mt-3 max-w-md">
+              {lang === 'ka' 
+                ? "ყოველდღიური შეტყობინებები შენი EQ განვითარებისთვის" 
+                : "Daily messages to support your EQ growth"}
+            </p>
           </div>
 
-          <p className="text-lg md:text-xl text-purple-300 max-w-lg mx-auto leading-relaxed">
-            ყოველდღიური მოტივაცია, რომელიც შეცვლის შენს დღეს
-          </p>
+          <div className="flex items-center gap-3 bg-white border border-[#EDE8DF] rounded-2xl px-6 py-4">
+            <div className="flex gap-1.5">
+              {Array.from({ length: 7 }).map((_, i) => (
+                <div
+                  key={i}
+                  className="w-2.5 h-2.5 rounded-full transition-all"
+                  style={{
+                    background: i < 5 ? '#C44B1B' : '#EDE8DF',
+                    boxShadow: i < 5 ? '0 0 8px rgba(196,75,27,0.4)' : 'none',
+                  }}
+                />
+              ))}
+            </div>
+            <span className="text-xs tracking-widest uppercase text-[#9B8E7F] font-mono">
+              {lang === 'ka' ? '12 დღიანი სერია' : '12-day streak'}
+            </span>
+          </div>
         </div>
 
-        {/* Posts */}
-        {posts.length === 0 ? (
-          <div className="text-center py-24">
-            <div className="text-7xl mb-6">🌟</div>
-            <h3 className="text-2xl font-medium text-white mb-2">ჯერჯერობით არაფერია</h3>
-            <p className="text-slate-400">ადმინისტრატორი მალე დაამატებს ახალ შეტყობინებებს</p>
+        {loading && (
+          <div className="flex justify-center py-20">
+            <div className="w-8 h-8 border-4 border-[#EDE8DF] border-t-[#B8860B] rounded-full animate-spin" />
           </div>
-        ) : (
-          <div className="space-y-10">
-            {posts.map((post) => (
-              <div
-                key={post.id}
-                className="group bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl overflow-hidden hover:border-purple-500/50 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2"
-              >
-                {/* Gradient Top Bar */}
-                <div className="h-1.5 bg-gradient-to-r from-purple-500 via-pink-500 to-violet-500" />
+        )}
 
-                <div className="p-8 md:p-12">
-                  <div className="flex gap-6">
-                    {/* Icon */}
-                    {post.icon && (
-                      <div className="text-7xl flex-shrink-0 transition-transform duration-300 group-hover:scale-110">
-                        {post.icon}
-                      </div>
+        {error && <div className="text-center py-20 text-red-600">{error}</div>}
+
+        {!loading && !error && posts.length > 0 && (
+          <>
+            {/* Featured Post (უკვე სრულია) */}
+            {featured && (
+              <div className="bg-gradient-to-br from-[#F5E6C8] via-[#FDF8EE] to-white border border-[#B8860B]/30 rounded-3xl p-12 mb-16 shadow-sm">
+                <div className="flex flex-col md:flex-row gap-10">
+                  {featured.icon && <div className="text-7xl flex-shrink-0">{featured.icon}</div>}
+                  <div className="flex-1">
+                    <div className="flex items-center gap-3">
+                      <div className="w-2 h-2 bg-[#B8860B] rounded-full" />
+                      <span className="text-[#B8860B] text-xs tracking-widest uppercase font-mono">
+                        {lang === 'ka' ? 'დღის შეტყობინება' : "Today's Message"}
+                      </span>
+                    </div>
+
+                    <h2 className="font-serif text-2xl italic leading-tight mt-6">
+                      {lang === 'ka' ? featured.title_ka : (featured.title_en || featured.title_ka)}
+                    </h2>
+
+                    {(featured.content_ka || featured.content_en) && (
+                      <p className="mt-8 text-[#6B5E52] leading-relaxed text-[15.5px]">
+                        {lang === 'ka' ? featured.content_ka : (featured.content_en || featured.content_ka)}
+                      </p>
                     )}
 
-                    {/* Content */}
-                    <div className="flex-1 min-w-0">
-                      <h2 className="text-2xl md:text-3xl font-semibold text-white leading-tight mb-4">
-                        {post.title_ka}
-                      </h2>
-
-                      {post.title_en && (
-                        <p className="text-purple-400 text-lg italic mb-8">
-                          {post.title_en}
-                        </p>
-                      )}
-
-                      {post.content_ka && (
-                        <p className="text-slate-200 text-[17px] leading-relaxed whitespace-pre-line">
-                          {post.content_ka}
-                        </p>
-                      )}
-
-                      {post.content_en && (
-                        <p className="mt-6 text-slate-400 text-base italic border-l-2 border-purple-500 pl-4">
-                          {post.content_en}
-                        </p>
-                      )}
+                    <div className="mt-10 flex items-center gap-4">
+                      <div className="h-px w-8 bg-[#EDE8DF]" />
+                      <span className="text-xs tracking-widest text-[#9B8E7F] font-mono">
+                        {new Date(featured.published_at).toLocaleDateString(lang)}
+                      </span>
                     </div>
                   </div>
                 </div>
-
-                {/* Footer */}
-                <div className="px-8 py-5 border-t border-white/10 flex items-center justify-between text-sm text-slate-400 bg-black/30">
-                  <div className="flex items-center gap-2">
-                    
-                    {/* Calendar SVG */}
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                      <rect x="3" y="4" width="18" height="18" rx="2" />
-                      <line x1="16" y1="2" x2="16" y2="6" />
-                      <line x1="8" y1="2" x2="8" y2="6" />
-                      <line x1="3" y1="10" x2="21" y2="10" />
-                    </svg>
-
-                    <span>
-                        {new Date(post.published_at).toLocaleDateString("ka-GE", {
-                            day: "2-digit",
-                            month: "long",
-                            year: "numeric",
-                        })}
-                    </span>
-                  </div>
-
-                  <div className="flex items-center gap-2">
-                    
-                    {/* Clock SVG */}
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                      <circle cx="12" cy="12" r="10" />
-                      <polyline points="12 6 12 12 16 14" />
-                    </svg>
-
-                    <span>დღის მოტივაცია</span>
-                  </div>
-                </div>
               </div>
-            ))}
+            )}
+
+            {/* Expandable Posts */}
+            <div className="mb-8 flex items-center gap-3">
+              <span className="text-2xl font-bold text-[#B8860B] font-mono">{posts.length}</span>
+              <span className="text-xs tracking-widest uppercase text-[#9B8E7F] font-mono">
+                {lang === 'ka' ? 'შეტყობინება' : 'messages'}
+              </span>
+            </div>
+
+            <div className="space-y-4">
+              {restPosts.map((post) => {
+                const isOpen = openPosts[post.id] || false;
+                const title = lang === 'ka' ? post.title_ka : (post.title_en || post.title_ka);
+                const content = lang === 'ka' ? post.content_ka : (post.content_en || post.content_ka);
+
+                return (
+                  <div
+                    key={post.id}
+                    onClick={() => togglePost(post.id)}
+                    className="group bg-white border border-[#EDE8DF] rounded-3xl overflow-hidden cursor-pointer hover:border-[#B8860B]/40 transition-all"
+                  >
+                    {/* Header Part */}
+                    <div className="p-8 flex items-start gap-5">
+                      {post.icon && (
+                        <div className="text-4xl flex-shrink-0 mt-1 group-hover:scale-110 transition-transform">
+                          {post.icon}
+                        </div>
+                      )}
+                      <div className="flex-1 min-w-0">
+                        <h3 className="font-serif italic text-lg leading-tight group-hover:text-[#B8860B] transition-colors">
+                          {title}
+                        </h3>
+                        <p className="text-[#9B8E7F] text-xs mt-4 font-mono">
+                          {new Date(post.published_at).toLocaleDateString(lang)}
+                        </p>
+                      </div>
+
+                      <div className={`text-2xl text-[#9B8E7F] transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}>
+                        ↓
+                      </div>
+                    </div>
+
+                    {/* Expandable Content */}
+                    <div
+                      className={`overflow-hidden transition-all duration-500 ease-in-out px-8 pb-8 ${
+                        isOpen ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'
+                      }`}
+                    >
+                      {content && (
+                        <div className="pt-6 border-t border-[#EDE8DF]">
+                          <p className="text-[#6B5E52] leading-relaxed text-[15.5px]">
+                            {content}
+                          </p>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </>
+        )}
+
+        {!loading && !error && posts.length === 0 && (
+          <div className="text-center py-32 text-[#9B8E7F]">
+            {lang === 'ka' ? 'შეტყობინებები ჯერ არ არის' : 'No motivational posts yet'}
           </div>
         )}
       </div>
