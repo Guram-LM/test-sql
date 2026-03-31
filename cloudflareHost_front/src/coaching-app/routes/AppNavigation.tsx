@@ -23,6 +23,9 @@ const VerifyEmailPage     = lazy(() => import("../pages/user/verify-email/Verify
 const ProfilePage         = lazy(() => import("../pages/user/profile-page/ProfilePage"));
 const ForgotPasswordPage  = lazy(() => import("../pages/user/forgot-password/ForgotPasswordPage"));
 const ChangePasswordPage  = lazy(() => import("../pages/user/change-password/ChangePasswordPage"));
+const EditProfil  = lazy(() => import("../pages/user/profile-page/EditProfil"));
+const EventsSpace  = lazy(() => import("../pages/user/profile-page/EventsSpace"));
+const MotivationalPosts  = lazy(() => import("../pages/motivational-posts/MotivationalPosts"));
 
 // ── დაამატე Routes-ში Layout-ის გარეთ ──────────────────────────
 
@@ -107,13 +110,54 @@ const AppNavigation = () => {
           />
          
           <Route path="login"           element={<PageWrapper locationKey={location.pathname}><LoginPage /></PageWrapper>} />
-<Route path="register"        element={<PageWrapper locationKey={location.pathname}><RegisterPage /></PageWrapper>} />
-<Route path="verify-email"    element={<PageWrapper locationKey={location.pathname}><VerifyEmailPage /></PageWrapper>} />
-<Route path="forgot-password" element={<PageWrapper locationKey={location.pathname}><ForgotPasswordPage /></PageWrapper>} />
+          <Route path="register"        element={<PageWrapper locationKey={location.pathname}><RegisterPage /></PageWrapper>} />
+          <Route path="verify-email"    element={<PageWrapper locationKey={location.pathname}><VerifyEmailPage /></PageWrapper>} />
+          <Route path="forgot-password" element={<PageWrapper locationKey={location.pathname}><ForgotPasswordPage /></PageWrapper>} />
 
 
-<Route path="profile"         element={<ProtectedRoute><PageWrapper locationKey={location.pathname}><ProfilePage /></PageWrapper></ProtectedRoute>} />
-<Route path="change-password" element={<ProtectedRoute><PageWrapper locationKey={location.pathname}><ChangePasswordPage /></PageWrapper></ProtectedRoute>} />
+
+          <Route 
+            path="change-password" 
+            element={
+              <ProtectedRoute>
+                <PageWrapper locationKey={location.pathname}>
+                  <ChangePasswordPage />
+                </PageWrapper>
+              </ProtectedRoute>
+            } 
+          />
+
+          <Route 
+            path="profile"
+            element={
+              <ProtectedRoute>
+                <PageWrapper locationKey={location.pathname}>
+                  <ProfilePage />
+                </PageWrapper>
+              </ProtectedRoute>
+            }
+          >
+            <Route 
+              index
+              element={
+                <MotivationalPosts />
+              }
+            />
+
+            <Route 
+              path="edit-profil"
+              element={
+                <EditProfil />
+              }
+            />
+
+            <Route 
+              path="events-space"
+              element={
+                <EventsSpace />
+              }
+            />
+          </Route>
 
         </Route>
 

@@ -5,7 +5,6 @@ import Logo from "./Logo";
 import Navigation from "./Navigation";
 import MobileMenu from "./MobileMenu";
 import MediumHeader from './MediumHeader';
-import UserMenu from './user/UserMenu';
 
 
 interface NavigationType {
@@ -79,8 +78,6 @@ const Header = () => {
           <div className="absolute left-1/2 -translate-x-1/2 hidden lg:block">
             <Navigation />
           </div>
-
-          <UserMenu/>
           
           <div className="ml-auto flex items-center gap-4">
             <div className="hidden lg:block">

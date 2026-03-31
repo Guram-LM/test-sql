@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 import { useFetchMyEvents } from '../../../components/hook/useFetchEvents';
 import { useInView } from '../../../components/hook/useInView';
 import { formatFullDate } from '../../event/date';
-import NoEventsState from '../../event/NoEventsState';
 
 interface MyEvent {
   id: number;
@@ -61,7 +60,6 @@ const UpcomingCard = ({ event, lang }: { event: MyEvent; lang: string }) => {
       onClick={handleCardClick}
       className="bg-white border border-[#EDE8DF] rounded-3xl overflow-hidden hover:border-[#B8860B]/40 transition-all cursor-pointer group"
     >
-      {/* Top gradient line */}
       <div className="h-0.5 bg-gradient-to-r from-[#B8860B] via-[#D4A017] to-[#B8860B]" />
 
       <div className="p-8">
@@ -75,7 +73,6 @@ const UpcomingCard = ({ event, lang }: { event: MyEvent; lang: string }) => {
             </p>
           </div>
 
-          {/* "Soon" badge */}
           <div className="bg-[#E8F5EE] border border-[#2D6A4F]/20 px-5 py-2 rounded-2xl flex items-center gap-2 text-[#2D6A4F] text-xs whitespace-nowrap">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#52B788] opacity-75"></span>
@@ -96,7 +93,6 @@ const UpcomingCard = ({ event, lang }: { event: MyEvent; lang: string }) => {
         )}
 
         <div className="mt-8 flex flex-wrap items-end justify-between gap-6">
-          {/* Countdown */}
           <div className="flex items-end gap-4">
             {timeLeft.days > 0 && (
               <>
@@ -155,7 +151,7 @@ const PastCard = ({ event, lang, idx, total }: { event: MyEvent; lang: string; i
 
   return (
     <div style={{ display: 'flex', gap: '16px' }}>
-      {/* Date Circle */}
+
       <div className="flex flex-col items-center min-w-[48px]">
         <div
           onClick={() => setOpen(!open)}
@@ -171,7 +167,6 @@ const PastCard = ({ event, lang, idx, total }: { event: MyEvent; lang: string; i
         )}
       </div>
 
-      {/* Past Card */}
       <div
         onClick={() => setOpen(!open)}
         className={`flex-1 border rounded-3xl bg-white transition-all mb-4 cursor-pointer hover:border-[#B8860B]/40 ${
@@ -215,7 +210,7 @@ const EventsSpace = () => {
   const lang = i18n.language;
 
   const { ref, isVisible } = useInView();
-  const { data, isLoading, isError } = useFetchMyEvents(isVisible);
+  const { data } = useFetchMyEvents(isVisible);
 
   const upcoming = data?.filter((e: MyEvent) => e.status === 'upcoming') ?? [];
   const past = data
@@ -232,8 +227,7 @@ const EventsSpace = () => {
           <h2 className="font-serif italic text-4xl mt-2">ივენთების სივრცე</h2>
         </div>
 
-        {/* Toggle Buttons */}
-        <div className="inline-flex bg-[#EDE8DF] p-1.5 rounded-2xl mb-10">
+        <div className="inline-flex bg-[#242323] p-1.5 rounded-2xl mb-10">
           <button
             onClick={() => setView('upcoming')}
             className={`px-8 py-3 text-xs tracking-widest font-mono rounded-xl transition-all ${

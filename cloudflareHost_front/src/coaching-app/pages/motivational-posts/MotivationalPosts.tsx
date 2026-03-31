@@ -85,24 +85,6 @@ const MotivationalPosts: React.FC = () => {
                 : "Daily messages to support your EQ growth"}
             </p>
           </div>
-
-          <div className="flex items-center gap-3 bg-white border border-[#EDE8DF] rounded-2xl px-6 py-4">
-            <div className="flex gap-1.5">
-              {Array.from({ length: 7 }).map((_, i) => (
-                <div
-                  key={i}
-                  className="w-2.5 h-2.5 rounded-full transition-all"
-                  style={{
-                    background: i < 5 ? '#C44B1B' : '#EDE8DF',
-                    boxShadow: i < 5 ? '0 0 8px rgba(196,75,27,0.4)' : 'none',
-                  }}
-                />
-              ))}
-            </div>
-            <span className="text-xs tracking-widest uppercase text-[#9B8E7F] font-mono">
-              {lang === 'ka' ? '12 დღიანი სერია' : '12-day streak'}
-            </span>
-          </div>
         </div>
 
         {loading && (
