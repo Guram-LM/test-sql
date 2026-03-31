@@ -9,7 +9,7 @@ const LanguageButton = () => {
   return (
     <div className="relative inline-block text-left">
       <div className="flex justify-end items-center">
-            <div className="bg-[#EDE8DF] p-1 rounded-xl flex">
+            <div className=" bg-[#242323] p-1 rounded-xl flex">
               {['ka', 'en'].map((l) => (
                 <button
                   key={l}
@@ -19,8 +19,8 @@ const LanguageButton = () => {
                   }}
                   className={`px-5 py-2 text-xs tracking-widest font-mono rounded-lg transition-all ${
                     activeLang === l
-                      ? 'bg-white shadow text-[#B8860B]'
-                      : 'text-[#9B8E7F] hover:text-[#1A1410]'
+                      ? 'bg-white shadow text-[#242323]'
+                      : 'text-[#d4af37] hover:text-[#d5a382]'
                   }`}
                 >
                   {l.toUpperCase()}
@@ -31,5 +31,6 @@ const LanguageButton = () => {
     </div>
   );
 };
+
 
 export default LanguageButton;

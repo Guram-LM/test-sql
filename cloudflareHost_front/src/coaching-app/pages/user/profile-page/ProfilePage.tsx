@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useMe } from '../../../components/hook/user/useUserHooks';
 import { Link, Outlet, useLocation } from 'react-router-dom';
+import GlowingInitials from './GlowingInitials';
 
 
 
@@ -44,7 +45,7 @@ const ProfileOverview = () => {
               style={{
                 background: '#242323',
                 borderColor: '#242323',
-                color: '#B8860B',
+                color: '#d4af37',
               }}
             >
               {user?.firstName[0]}{user?.lastName[0]}
@@ -63,7 +64,14 @@ const ProfileOverview = () => {
           </div>
 
         </div>
+
+
+                <div className="hidden min-[800px]:block">
+                  <GlowingInitials user={user} />
+                </div>
+
       </div>
+      
 
           <div className="mt-10 bg-[#242323] p-2 rounded-2xl inline-flex gap-1">
           {tabs.map((t) => (
@@ -82,6 +90,7 @@ const ProfileOverview = () => {
           ))}
           </div>
         </div>
+        
       </div>
 
       <Outlet />
@@ -91,3 +100,6 @@ const ProfileOverview = () => {
 };
 
 export default ProfileOverview;
+
+
+

@@ -56,8 +56,8 @@ const UserMenu = () => {
       <div className="relative inline-block text-left" ref={dropdownRef}>
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="flex items-center justify-center w-12 h-12 rounded-full 
-                    bg-slate-800 text-white 
+          className="flex items-center justify-center w-11 h-11 rounded-full 
+                    bg-slate-800 text-[#d4af37] 
                     border border-yellow-400 
                     ring-2 ring-yellow-400/30 
                     hover:ring-yellow-400/50 
@@ -123,9 +123,10 @@ const UserMenu = () => {
   // ============== რეგისტრირებული მომხმარებელი (მუქი ავატარი + ოქროსფერი კონტური) ==============
   return (
     <div className="relative" ref={dropdownRef}>
+      
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-white font-semibold text-xl border border-yellow-400 ring-2 ring-yellow-400/30 hover:ring-yellow-400/50 transition-all focus:outline-none focus:ring-4 focus:ring-yellow-400/50 overflow-hidden"
+        className="w-11 h-11 rounded-full bg-slate-800 flex items-center justify-center text-[#d4af37]  text-xl border border-[#d4af37] ring-2 ring-[#d4af37] hover:ring-[#d4af37] transition-all focus:outline-none focus:ring-4 focus:ring-yellow-400/50 overflow-hidden"
         aria-label="User menu"
       >
         {getInitial(user.firstName || user.email)}
